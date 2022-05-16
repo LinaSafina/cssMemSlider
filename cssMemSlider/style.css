@@ -125,6 +125,9 @@ label:hover {
       'controls'
       'phrases';
   }
+  .phrases {
+    font-size: 1.5rem;
+  }
   .controls {
     justify-content: center;
   }
