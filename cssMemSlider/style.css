@@ -35,7 +35,7 @@ body {
   height: inherit;
   width: 0;
   display: inline-block;
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   transition: width ease-in-out 0.8s;
   border-radius: 2rem;
