@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(52, 51, 51);
+}
+
+.slider {
+  height: 80vh;
+  width: 80vw;
+  margin: 2vh auto 0;
+  display: grid;
+  grid-template-columns: auto 15rem;
+  row-gap: 4vh;
+  grid-template-areas:
+    'slides slides'
+    'phrases controls';
+}
+
+.slider > input {
+  display: none;
+}
+
+.slides {
+  height: inherit;
+  width: inherit;
+  grid-area: slides;
+  display: flex;
+}
+
+.slides__item {
+  height: inherit;
+  width: 0;
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: width ease-in-out 0.8s;
+  border-radius: 2rem;
+}
+
+.slide1 {
+  background-image: url('assets/daniel-k-cheung-cPF2nlWcMY4-unsplash.jpg');
+}
+.slide2 {
+  background-image: url('assets/juan-rumimpunu-nLXOatvTaLo-unsplash.jpg');
+}
+.slide3 {
+  background-image: url('assets/michelle-phillips-AVRxWIsK9Jk-unsplash.jpg');
+}
+.slide4 {
+  background-image: url('assets/tengyart-DoqtEEn8SOo-unsplash.jpg');
+}
+
+.phrases {
+  grid-area: phrases;
+  font-size: 2rem;
+  display: flex;
+  max-height: 5rem;
+  color: white;
+}
+
+.phrases__item {
+  display: inline-block;
+  width: 0;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: opacity ease-in-out 1s;
+}
+
+.controls {
+  grid-area: controls;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 2vh;
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  height: 1.7rem;
+  width: 1.7rem;
+  border: 2px solid rgb(102, 102, 241);
+  border-radius: 50%;
+  background-color: rgb(102, 102, 241);
+}
+
+label:hover {
+  background-color: white;
+  border: 2px solid white;
+}
+
+#slide1:checked ~ .controls label[for='slide1'],
+#slide2:checked ~ .controls label[for='slide2'],
+#slide3:checked ~ .controls label[for='slide3'],
+#slide4:checked ~ .controls label[for='slide4'] {
+  background-color: inherit;
+}
+
+#slide1:checked ~ .slides > .slide1,
+#slide2:checked ~ .slides > .slide2,
+#slide3:checked ~ .slides > .slide3,
+#slide4:checked ~ .slides > .slide4 {
+  width: inherit;
+}
+
+#slide1:checked ~ .phrases > .phrase1,
+#slide2:checked ~ .phrases > .phrase2,
+#slide3:checked ~ .phrases > .phrase3,
+#slide4:checked ~ .phrases > .phrase4 {
+  width: inherit;
+  overflow-x: visible;
+  opacity: 1;
+}
