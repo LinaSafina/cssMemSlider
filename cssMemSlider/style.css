@@ -114,3 +114,18 @@ label:hover {
   overflow-x: visible;
   opacity: 1;
 }
+
+@media screen and (max-width: 768px) {
+  .slider {
+    height: 90vw;
+    row-gap: 2vh;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'slides'
+      'controls'
+      'phrases';
+  }
+  .controls {
+    justify-content: center;
+  }
+}
